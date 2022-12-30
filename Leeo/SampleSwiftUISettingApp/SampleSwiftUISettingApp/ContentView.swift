@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isAirplaneModeOn: Bool = false
+    @State private var isVPNOn: Bool = false
+    
     var body: some View {
         NavigationView {
             List{
@@ -38,6 +42,124 @@ struct ContentView: View {
                     }
                 }
 
+                Section {
+                    HStack {
+                        NavigationLink("Apple Arcade 3개월 무료") {
+                            Text("Apple Arcade 3개월 무료")
+                        }
+                    }
+                }
+
+                Section {
+                    NavigationLink{
+                        Text("마저하기 설정 화면")
+                    } label: {
+                        HStack{
+                            Text("iPhone 설정 마저 하기")
+                                .badge(1)
+                        }
+                    }
+                }
+
+                Section {
+                    HStack {
+                        Image(systemName: "airplane")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .padding(.all, 4)
+                            .background(.orange)
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                        
+                        Toggle("에어플레인 모드",
+                               isOn: $isAirplaneModeOn)
+                    }
+                    HStack {
+                        Image(systemName: "wifi")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .padding(.all, 4)
+                            .background(.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                        
+                        NavigationLink{
+                            Text("와이파이 설정 화면")
+                        } label: {
+//                            Text("Wi-Fi")
+//                                .badge("SBA_YongSan")
+                            HStack {
+                                Text("Wi-Fi")
+                                Spacer()
+                                Text("SBA_YongSan")
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
+                    
+                    HStack {
+                        Image(systemName: "point.3.filled.connected.trianglepath.dotted")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .padding(.all, 4)
+                            .background(.indigo)
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                        
+                        NavigationLink{
+                            Text("Bluetooth 설정 화면")
+                        } label: {
+                            HStack {
+                                Text("Bluetooth")
+                                Spacer()
+                                Text("켬")
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
+                    HStack {
+                        Image(systemName: "dot.radiowaves.left.and.right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .padding(.all, 4)
+                            .background(.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                        NavigationLink("셀룰러") {
+                            Text("셀룰러 화면")
+                        }
+                    }
+                    HStack {
+                        Image(systemName: "personalhotspot")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .padding(.all, 4)
+                            .background(.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                        NavigationLink("개인용 핫스팟") {
+                            Text("개인용 핫스팟 화면")
+                        }
+                    }
+                    HStack {
+                        Image(systemName: "lock.icloud")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .padding(.all, 4)
+                            .background(.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(5)
+                        
+                        Toggle("VPN",
+                               isOn: $isVPNOn)
+                    }
+                }
                 
                 Section {
                     HStack {
@@ -101,26 +223,6 @@ struct ContentView: View {
         }
     }
 }
-
-//struct oneView: View {
-//    let imageName: String
-//    let navigationLinkTitle: String
-//    var navigationLink: any View
-//
-//    var body: some View {
-//        HStack {
-//            Image(systemName: imageName)
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 20, height: 20)
-//                .padding(.all, 4)
-//                .background(.indigo)
-//                .foregroundColor(.white)
-//                .cornerRadius(5)
-//            NavigationLink(navigationLinkTitle) { navigationLink as View }
-//        }
-//    }
-//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

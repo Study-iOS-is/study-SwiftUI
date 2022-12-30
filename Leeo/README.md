@@ -1,11 +1,13 @@
 1. Sample Setting App
-   1. Lecture 1
+
+   1. Lecture 1: 메뉴 만들기
+
       - NavigationViews
       - List
       - Section
       - Text
       - Hstack
-      - NavigationLink(_:destination:)
+      - NavigationLink(\_:destination:)
       - Image
         - resizable
         - aspectRatio
@@ -15,12 +17,19 @@
         - foregroundColor
         - cornerRadius
       - SF Symbols
-     
-    1. Lecture 2
-       - NavigationLink(destination:label:)
-       - Image
-         - ClipShape
-       - Text
-         - font
-           - .system(size:)
-         - fontWeight
+
+   2. Lecture 2: 프로필 부분 만들기
+
+      - NavigationLink(destination:label:)
+      - Image
+        - ClipShape
+      - Text
+        - font
+          - .system(size:)
+        - fontWeight
+
+   3. Lecture 3: cell detail
+
+      - Toggle(_:isOn:)
+      - @State
+      - Spacer
