@@ -1,0 +1,16 @@
+1. Sample Setting App
+- NavigationViews
+- List
+- Section
+- Text
+- Hstack
+- Image
+  - resizable
+  - aspectRatio
+  - frame
+  - padding
+  - background
+  - foregroundColor
+  - cornerRadius
+- SF Symbols
+- 
