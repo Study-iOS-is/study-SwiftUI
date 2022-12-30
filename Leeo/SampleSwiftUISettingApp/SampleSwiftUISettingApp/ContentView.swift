@@ -11,6 +11,34 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List{
+                NavigationLink {
+                    Text("프로필 화면")
+                } label: {
+                    Section {
+                        HStack {
+                            Image(systemName: "suitcase.rolling.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:30, height:30)
+                                .padding(10)
+                                .background(.gray)
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                            
+                            VStack(alignment: .leading, spacing: 3)  {
+                                Text("Is")
+                                    .font(.system(size:24))
+                                    .fontWeight(.medium)
+                                Text("Apple ID, iCloud+, 미디어 및 구입 항목")
+                                    .font(.system(size:14))
+                            }
+                            .padding(.leading, 6)
+                        }
+                        .padding(.vertical, 10)
+                    }
+                }
+
+                
                 Section {
                     HStack {
                         Image(systemName: "hourglass")
