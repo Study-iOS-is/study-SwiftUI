@@ -30,6 +30,12 @@
 
    3. Lecture 3: cell detail
 
-      - Toggle(_:isOn:)
+      - Toggle(\_:isOn:)
       - @State
       - Spacer
+
+   4. Lecture 4: refactoring 1
+
+      - @ViewBuilder
+      - **Generic**
+      - UIColor은 안돼서 ShapeStype generic으로 했지만, Color로 되더라
