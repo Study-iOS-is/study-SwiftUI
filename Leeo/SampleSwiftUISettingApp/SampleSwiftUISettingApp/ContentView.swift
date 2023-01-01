@@ -70,7 +70,7 @@ struct ContentView: View {
                         Text("일반 화면")
                     }
                    
-                    navigationLinkCell(imageName: "figure.wave.circle",
+                    navigationLinkCellV2(imageName: "figure.wave.circle",
                                        iconColor: .blue,
                                        cellTitle: "손쉬운 사용") {
                         Text("손쉬운 사용 화면")
@@ -131,6 +131,26 @@ struct ContentView: View {
 
     @ViewBuilder
     private func navigationLinkCell<V:View>(imageName: String, iconColor: Color, cellTitle: String, subTitle: String? = nil, destination: @escaping ()->V) -> some View {
+        HStack {
+            cellIcon(imageName: imageName, iconColor: iconColor)
+            
+            NavigationLink{
+                destination()
+            } label: {
+                HStack {
+                    Text(cellTitle)
+                    if let subTitle {
+                        Spacer()
+                        Text(subTitle)
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func navigationLinkCellV2(imageName: String, iconColor: Color, cellTitle: String, subTitle: String? = nil, destination: @escaping ()-> some View ) -> some View {
         HStack {
             cellIcon(imageName: imageName, iconColor: iconColor)
             

@@ -3,6 +3,7 @@
 HStack
 func
 define new view
+
 ```swift
 struct CardView: View {
     var body: some View {
